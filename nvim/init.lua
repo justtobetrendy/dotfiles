@@ -30,4 +30,5 @@ require("lazy").setup({
 	require("plugins.misc"),
 	require("plugins.commentary"),
 	require("plugins.trouble"),
+	require("plugins.flash"),
 })
