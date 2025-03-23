@@ -1,34 +1,77 @@
 return {
-	--"shaunsingh/nord.nvim",
-	--lazy = false,
-	--priority = 1000,
-	--config = function()
-	---- Example config in lua
-	--vim.g.nord_contrast = true
-	--vim.g.nord_borders = false
-	--vim.g.nord_disable_background = true
-	--vim.g.nord_italic = false
-	--vim.g.nord_uniform_diff_background = true
-	--vim.g.nord_bold = false
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
 
-	---- Load the colorscheme
-	--require("nord").set()
+    config = function()
+        require("catppuccin").setup({
+            styles = {
+                comments = { "bold" },
+                properties = { "bold" },
+                functions = { "bold" },
+                keywords = {},
+                operators = { "bold" },
+                conditionals = {},
+                loops = {},
+                booleans = { "bold", },
+                numbers = {},
+                types = {},
+                strings = {},
+                variables = {},
+            },
+            integrations = {
+                cmp = true,
+                flash = true,
+                fzf = true,
+                gitsigns = true,
+                indent_blankline = { enabled = true },
+                lsp_trouble = true,
+                mason = true,
+                markdown = true,
+                native_lsp = {
+                    enabled = true,
+                    -- virtual_text = {
+                    --     errors = { "italic" },
+                    --     hints = { "italic" },
+                    --     warnings = { "italic" },
+                    --     information = { "italic" },
+                    --     ok = { "italic" },
+                    -- },
+                    underlines = {
+                        errors = { "undercurl" },
+                        hints = { "undercurl" },
+                        warnings = { "undercurl" },
+                        information = { "undercurl" },
+                    },
+                    inlay_hints = {
+                        background = true,
+                    },
+                },
+                neotree = true,
+                -- noice = true,
+                -- notify = true,
+                snacks = {
+                    enabled = false,
+                    indent_scope_color = "lavender", -- catppuccin color (eg. `lavender`) Default: text
+                },
+                telescope = {
+                    enabled = true,
+                },
+                treesitter = true,
+                treesitter_context = true,
+                which_key = true,
+            },
+        })
 
-	---- Toggle background transparency
-	--local bg_transparent = true
+        vim.cmd.colorscheme "catppuccin-macchiato"
+        -- vim.cmd.colorscheme "catppuccin"
 
-	--local toggle_transparency = function()
-	--bg_transparent = not bg_transparent
-	--vim.g.nord_disable_background = bg_transparent
-	--vim.cmd([[colorscheme nord]])
-	--end
-
-	--vim.keymap.set("n", "<leader>bg", toggle_transparency, { noremap = true, silent = true })
-	--end,
-	"catppuccin/nvim",
-	name = "catppuccin",
-	priority = 1000,
-	config = function()
-		vim.cmd.colorscheme("catppuccin-macchiato")
-	end,
+        -- Explicitly set diagnostic underline styles
+        vim.cmd([[
+            highlight DiagnosticUnderlineError gui=undercurl
+            highlight DiagnosticUnderlineWarn gui=undercurl
+            highlight DiagnosticUnderlineInfo gui=undercurl
+            highlight DiagnosticUnderlineHint gui=undercurl
+        ]])
+    end
 }
