@@ -50,6 +50,7 @@ return {
                 neotree = true,
                 -- noice = true,
                 -- notify = true,
+                render_markdown = true,
                 snacks = {
                     enabled = false,
                     indent_scope_color = "lavender", -- catppuccin color (eg. `lavender`) Default: text
