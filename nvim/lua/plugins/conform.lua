@@ -18,6 +18,7 @@ return {
                 go = { "gofmt" },     -- golines is another option
                 yaml = { "prettier" },
                 markdown = { "prettier" },
+                -- toml = { "prettier" },
                 graphql = { "prettier" },
                 liquid = { "prettier" },
                 lua = { "stylua" },

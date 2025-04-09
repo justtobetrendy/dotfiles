@@ -5,6 +5,7 @@ return {
     ---@type snacks.Config
     opts = {
         indent = { enabled = true },
+        bigfile = { enabled = true },
         dashboard = {
             enabled = true,
             width = 60,

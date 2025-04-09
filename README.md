@@ -10,27 +10,27 @@ Node (nvm) and GoLang (or LSP will not install)
 
 ### terminal
 
-- [wezterm](https://wezfurlong.org/wezterm/index.html)
-- [ohmyzsh](https://ohmyz.sh/)
-- [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+- [wezterm](https://wezfurlong.org/wezterm/index.html) via homebrew (cask)
 
 ### terminal cli
 
-- [fzf](https://github.com/junegunn/fzf)
-- [zoxide](https://github.com/ajeetdsouza/zoxide)
-- [ripgrep](https://github.com/BurntSushi/ripgrep)
-- [lazygit](https://github.com/jesseduffield/lazygit)
-- [lazydocker](https://github.com/jesseduffield/lazydocker)
+- [bat](https://github.com/sharkdp/bat) via homebrew
+- [fzf](https://github.com/junegunn/fzf) via homebrew
+- [zoxide](https://github.com/ajeetdsouza/zoxide) via homebrew
+- [ripgrep](https://github.com/BurntSushi/ripgrep) via homebrew
+- [lazygit](https://github.com/jesseduffield/lazygit) via homebrew
+- [lazydocker](https://github.com/jesseduffield/lazydocker) via homebrew
+- [ohmyposh](https://ohmyposh.dev/) via homebrew
+
 
 ### tmux
 
-- [tmux](https://github.com/tmux/tmux/wiki)
+- [tmux](https://github.com/tmux/tmux/wiki) via homebrew
 - [tpm](https://github.com/tmux-plugins/tpm)
 
 ### neovim
 
-- [neovim](https://neovim.io/)
-
+- [neovim](https://neovim.io/) via homebrew
 
 ## NVIM
 

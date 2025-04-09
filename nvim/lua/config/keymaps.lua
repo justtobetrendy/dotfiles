@@ -5,10 +5,17 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 -- Navigate between splits
-vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", opts)
-vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", opts)
-vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", opts)
-vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", opts)
+-- vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", opts)
+-- vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", opts)
+-- vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", opts)
+-- vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", opts)
+
+-- Using TmuxNavigate to navigate between splits, if not using tmux
+-- use the keymaps above.
+vim.keymap.set("n", "<C-k>", "<cmd>:TmuxNavigateUp<CR>", opts)
+vim.keymap.set("n", "<C-j>", "<cmd>:TmuxNavigateDown<CR>", opts)
+vim.keymap.set("n", "<C-h>", "<cmd>:TmuxNavigateLeft<CR>", opts)
+vim.keymap.set("n", "<C-l>", "<cmd>:TmuxNavigateRight<CR>", opts)
 
 -- delete single character without copying into register
 vim.keymap.set("n", "x", '"_x', opts)
