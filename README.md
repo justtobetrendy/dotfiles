@@ -4,7 +4,7 @@ To apply configuration, copy paste directory in `~/.config/`.
 
 ### prerequisits
 
-Node (nvm) and GoLang (or LSP will not install)
+Node (via [n](https://github.com/tj/n)) and GoLang (or LSP will not install)
 
 - [nerdfont](https://www.nerdfonts.com/) JetBrainsMono Nerd Font Mono [via homebrew](https://formulae.brew.sh/cask/font-jetbrains-mono-nerd-font)
 

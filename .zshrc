@@ -27,9 +27,11 @@ fi
 # +++++++++++++++++++++++++
 # nvm 
 
-export NVM_DIR="$HOME/.nvm"
-zinit ice wait"0" atload"!nvm use default >/dev/null 2>&1 || true" pick"nvm.sh" silent
-zinit light https://github.com/nvm-sh/nvm
+# nvm is very slow, trying n https://github.com/tj/n 
+#
+# export NVM_DIR="$HOME/.nvm"
+# zinit ice wait"0" atload"!nvm use default >/dev/null 2>&1 || true" pick"nvm.sh" silent
+# zinit light https://github.com/nvm-sh/nvm
 
 # +++++++++++++++++++++++++
 # zoxide
