@@ -10,18 +10,20 @@ Node (via [n](https://github.com/tj/n), see node [download page](https://nodejs.
 
 ### terminal
 
-- [wezterm](https://wezfurlong.org/wezterm/index.html) via homebrew (cask)
+- [wezterm](https://wezfurlong.org/wezterm/index.html) via homebrew (cask) -- deprecated
+- [ghostty](https://ghostty.org/) via homebrew (cask)
+- [ohmyposh](https://ohmyposh.dev/) via homebrew -- deprecated
+- [starship](https://starship.rs/) via homebrew
+- [fish](https://fishshell.com/) via homebrew
 
 ### terminal cli
 
-- [bat](https://github.com/sharkdp/bat) via homebrew
+- [bat](https://github.com/sharkdp/bat) via homebrew -- deprecated
 - [fzf](https://github.com/junegunn/fzf) via homebrew
 - [zoxide](https://github.com/ajeetdsouza/zoxide) via homebrew
 - [ripgrep](https://github.com/BurntSushi/ripgrep) via homebrew
 - [lazygit](https://github.com/jesseduffield/lazygit) via homebrew
 - [lazydocker](https://github.com/jesseduffield/lazydocker) via homebrew
-- [ohmyposh](https://ohmyposh.dev/) via homebrew
-
 
 ### tmux
 
