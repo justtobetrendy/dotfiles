@@ -13,8 +13,16 @@ Node (via [n](https://github.com/tj/n), see node [download page](https://nodejs.
 - [wezterm](https://wezfurlong.org/wezterm/index.html) via homebrew (cask) -- deprecated
 - [ghostty](https://ghostty.org/) via homebrew (cask)
 - [ohmyposh](https://ohmyposh.dev/) via homebrew -- deprecated
-- [starship](https://starship.rs/) via homebrew
 - [fish](https://fishshell.com/) via homebrew
+- [fisher](https://github.com/jorgebucaran/fisher)
+    - [catppuccin color scheme for fish](https://github.com/catppuccin/fish) via fisher
+    - [pure prompt for fish](https://github.com/pure-fish/pure) via fisher
+
+```
+~> fisher install catppuccin/fish
+~> fish_config theme save "Catppuccin Macchiato"
+~> fisher install pure-fish/pure
+```
 
 ### terminal cli
 
