@@ -24,6 +24,7 @@ Node (via [n](https://github.com/tj/n), see node [download page](https://nodejs.
 - [ripgrep](https://github.com/BurntSushi/ripgrep) via homebrew
 - [lazygit](https://github.com/jesseduffield/lazygit) via homebrew
 - [lazydocker](https://github.com/jesseduffield/lazydocker) via homebrew
+- [timeshift](https://github.com/linuxmint/timeshift) via pacman
 
 ### tmux
 
@@ -33,7 +34,5 @@ Node (via [n](https://github.com/tj/n), see node [download page](https://nodejs.
 ### neovim
 
 - [neovim](https://neovim.io/) via homebrew
-
-## NVIM
 
 after initial load run `:Copilot setup`
