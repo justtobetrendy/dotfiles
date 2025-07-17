@@ -27,6 +27,7 @@ Node (via [n](https://github.com/tj/n), see node [download page](https://nodejs.
 ### terminal cli
 
 - [bat](https://github.com/sharkdp/bat) via homebrew -- deprecated
+- [git](https://git-scm.com/downloads) via homebrew
 - [fzf](https://github.com/junegunn/fzf) via homebrew
 - [zoxide](https://github.com/ajeetdsouza/zoxide) via homebrew
 - [ripgrep](https://github.com/BurntSushi/ripgrep) via homebrew
@@ -42,5 +43,6 @@ Node (via [n](https://github.com/tj/n), see node [download page](https://nodejs.
 ### neovim
 
 - [neovim](https://neovim.io/) via homebrew
+- set nvim as default git editor `git config --global core.editor "nvim"`
 
 after initial load run `:Copilot setup`
