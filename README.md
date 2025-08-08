@@ -22,7 +22,6 @@ Node (via [n](https://github.com/tj/n), see node [download page](https://nodejs.
 ~> fisher install catppuccin/fish
 ~> fish_config theme save "Catppuccin Macchiato"
 ~> fisher install pure-fish/pure
-~> fisher install thernstig/fish-ssh-agent
 ```
 
 ### terminal cli
