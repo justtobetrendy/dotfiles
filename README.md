@@ -22,6 +22,7 @@ Node (via [n](https://github.com/tj/n), see node [download page](https://nodejs.
 ~> fisher install catppuccin/fish
 ~> fish_config theme save "Catppuccin Macchiato"
 ~> fisher install pure-fish/pure
+~> fisher install thernstig/fish-ssh-agent
 ```
 
 ### terminal cli
@@ -38,7 +39,7 @@ Node (via [n](https://github.com/tj/n), see node [download page](https://nodejs.
 ### tmux
 
 - [tmux](https://github.com/tmux/tmux/wiki) via homebrew
-- [tpm](https://github.com/tmux-plugins/tpm)
+- [tpm](https://github.com/tmux-plugins/tpm) - catppuccin tmux theme needs to be installed manually
 
 ### neovim
 
