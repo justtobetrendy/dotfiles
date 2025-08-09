@@ -2,7 +2,7 @@
 
 ### Firmware update
 
-Based on the Framework KB Articlel [Updating Fingerprint Reader Firmware on Linux for all Framework Laptops](https://knowledgebase.frame.work/en_us/updating-fingerprint-reader-firmware-on-linux-for-13th-gen-and-amd-ryzen-7040-series-laptops-HJrvxv_za)
+Based on the Framework KB Article [Updating Fingerprint Reader Firmware on Linux for all Framework Laptops](https://knowledgebase.frame.work/en_us/updating-fingerprint-reader-firmware-on-linux-for-13th-gen-and-amd-ryzen-7040-series-laptops-HJrvxv_za)
 
 Check the current version:
 
