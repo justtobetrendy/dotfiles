@@ -73,7 +73,7 @@ after initial load run `:Copilot setup`
 ### Hyprland
 
 ```
-sudo pacman -S waybar hyprlock hyprpaper hypridle hyprshot hyprsunset hyprpolkitagent blueberry impala wiremix brightnessctl swaync
+sudo pacman -S waybar hyprlock hyprpaper hypridle hyprshot hyprsunset hyprpolkitagent blueberry impala wiremix brightnessctl swaync power-profiles-daemon
 paru -S wlogout waypaper
 ```
 
