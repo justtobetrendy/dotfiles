@@ -14,11 +14,11 @@ special for tmux: `stow tmux --no-folding -t ~`
 [Paru (AUR)](https://github.com/Morganamilo/paru)
 
 ```
-sudo pacman -S neovim fish ghostty git tmux mise ttf-jetbrains-mono-nerd lazygit fastfetch obsidian zoxide fzf wl-clipboard eza stow
+sudo pacman -S neovim fish ghostty git tmux mise ttf-jetbrains-mono-nerd lazygit fastfetch obsidian zoxide fzf wl-clipboard eza stow snapper
 ```
 
 ```
-paru -S lazydocker 
+paru -S lazydocker btrfs-assistant
 ```
 
 chsh -s /usr/bin/fish
@@ -73,11 +73,14 @@ after initial load run `:Copilot setup`
 ### Hyprland
 
 ```
-sudo pacman -S waybar hyprlock hyprpaper hypridle hyprshot hyprsunset blueberry impala wiremix brightnessctl swaync
+sudo pacman -S waybar hyprlock hyprpaper hypridle hyprshot hyprsunset hyprpolkitagent blueberry impala wiremix brightnessctl swaync
 paru -S wlogout waypaper
 ```
 
 systemctl enable iwd.service (for impala)
+systemctl start fprintd
+systemctl enable bluetooth.service 
+systemctl start bluetooth.service 
 
 for swaync to work we need to remove `org.knopwob.dunst.service` (or the file containing `dunst` in it's filename) from `/usr/share/dbus-1/services`
  
