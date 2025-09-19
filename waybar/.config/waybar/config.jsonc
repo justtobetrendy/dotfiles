@@ -1,0 +1,455 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 32, // Waybar height (to be removed for auto height)
+    "width": 1280, // Waybar width
+    "margin-top": 18, // adjust gaps in hyperland
+    // "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "group/arch",
+        "hyprland/workspaces"
+        // "custom/media"
+    ],
+    // "modules-center": [
+    //     "hyprland/workspaces"
+    // ],
+    "modules-right": [
+        "mpd",
+        // "idle_inhibitor",
+        // "pulseaudio",
+        "group/audio",
+        "pulseaudio#microphone",
+        "network",
+        "custom/pia",
+        // "cpu",
+        // "memory",
+        // "temperature",
+        // "backlight",
+        // "group/brightness",
+        // "custom/colortemp",
+        // "custom/gamma",
+        // "keyboard-state",
+        // "sway/language",
+        "battery",
+        // "battery#bat2",
+        "clock",
+        "tray",
+        "custom/notification",
+        "custom/power"
+    ],
+    "hyprland/workspaces": {
+        // "format": "{name}: {icon}",
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "active": "",
+            "focused": "",
+            "default": ""
+        },
+        "active-only": false,
+        "all-outputs": false,
+        "persistent-workspaces": {
+            "eDP-1": [
+                6,
+                7,
+                8,
+                9,
+                10
+            ],
+            // note: we define DP-7 and DP-8 because monitor ID seems to change due to docking station.
+            "DP-7": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "DP-8": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        }
+    },
+    "custom/pia": {
+        "format": "{icon}",
+        "format-icons": {
+            "Disconnected": "<span foreground='red'><sup></sup></span>",
+            "Connecting": "<span foreground='orange'><sup></sup></span>",
+            "Connected": "<span foreground='green'><sup></sup></span>",
+            "ConnectedStreaming": "<span foreground='green'><sup></sup></span>",
+            "Interrupted": "<span foreground='red'><sup></sup></span>",
+            "Reconnecting": "<span foreground='orange'><sup></sup></span>",
+            "DisconnectingToReconnect": "<span foreground='orange'><sup></sup></span>",
+            "Disconnecting": "<span foreground='red'><sup></sup></span>"
+        },
+        "interval": 15,
+        "return-type": "json",
+        "exec": "~/.config/rofi/pia/pia.sh",
+        "on-click": "~/.config/rofi/pia/pia.sh toggle",
+        "on-click-right": "~/.config/rofi/pia/pia.sh select-region",
+        "tooltip": true,
+        "tooltip-format": "{alt} to {text}"
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+    // Modules configuration
+    // "keyboard-state": {
+    //     "numlock": true,
+    //     "capslock": true,
+    //     "format": "{name} {icon}",
+    //     "format-icons": {
+    //         "locked": "",
+    //         "unlocked": ""
+    //     }
+    // },
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 5,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+        //   "blueman": "bluetooth",
+        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+        // }
+    },
+    "clock": {
+        "format": "{:%H:%M 󰸘 %d}",
+        "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "group/arch": {
+        "icon": "yo",
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 400,
+            // "children-class": "brightness",
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "custom/icon",
+            "custom/colortemp",
+            "custom/gamma",
+            "power-profiles-daemon",
+            "bluetooth"
+        ]
+    },
+    "custom/icon": {
+        "format": "󰣇 btw",
+        "tooltip": false
+    },
+    "custom/colortemp": {
+        // "format": "{percentage}K {icon}",
+        "format": "{icon}",
+        "format-icons": {
+            "default": "󰈈",
+            "custom": "󰈉"
+        },
+        "on-click": "~/.config/hypr/scripts/hyprsunset.sh temperature 4000 toggle",
+        // "on-click-right": "~/.config/hypr/scripts/hyprsunset.sh temperature 6500",
+        // "on-scroll-up": "~/.config/hypr/scripts/hyprsunset.sh temperature +500",
+        // "on-scroll-down": "~/.config/hypr/scripts/hyprsunset.sh temperature -500",
+        "exec": "~/.config/hypr/scripts/hyprsunset.sh temperature",
+        "exec-on-event": false,
+        "exec-if": "pidof hyprsunset",
+        "interval": "once",
+        "tooltip": true,
+        "tooltip-format": "{percentage}K",
+        "signal": 4,
+        "return-type": "json"
+    },
+    "custom/gamma": {
+        "format": "{percentage}% {icon}",
+        "format-icons": {
+            "default": "",
+            "custom": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
+        // "on-click": "~/.config/hypr/scripts/hyprsunset.sh gamma 70 toggle",
+        // "on-click-right": "~/.config/hypr/scripts/hyprsunset.sh gamma 100",
+        "on-scroll-up": "~/.config/hypr/scripts/hyprsunset.sh gamma +10",
+        "on-scroll-down": "~/.config/hypr/scripts/hyprsunset.sh gamma -10",
+        "exec": "~/.config/hypr/scripts/hyprsunset.sh gamma",
+        "exec-on-event": false,
+        "exec-if": "pidof hyprsunset",
+        "tooltip": false,
+        "interval": "once",
+        "signal": 3,
+        "return-type": "json"
+    },
+    // replaced in favor of custom/gamma and custom/colortemp since
+    // it was not working for secondary monitors
+    // "group/brightness": {
+    //     "orientation": "inherit",
+    //     "drawer": {
+    //         "transition-duration": 400,
+    //         "children-class": "brightness",
+    //         "transition-left-to-right": false
+    //     },
+    //     "modules": [
+    //         "backlight",
+    //         "backlight/slider"
+    //     ]
+    // },
+    // "backlight/slider": {
+    //     "min": 5,
+    //     "max": 100,
+    //     "orientation": "horizontal",
+    //     "device": "intel_backlight"
+    // },
+    // "backlight": {
+    //     // "device": "acpi_video1",
+    //     "format": "{percent}% {icon}",
+    //     "format-icons": [
+    //         "",
+    //         "",
+    //         "",
+    //         "",
+    //         "",
+    //         "",
+    //         "",
+    //         "",
+    //         ""
+    //     ],
+    //     // If you want to use scroll to change brightness, comment the following lines
+    //     "on-scroll-up": "",
+    //     "on-scroll-down": "",
+    //     // And Uncomment the following lines
+    //     // "reverse-scrolling": true,
+    //     // "smooth-scrolling-threshold": 0.1,
+    //     "tooltip": false
+    // },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰂄",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        // "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-wifi": "{essid} ",
+        // "format-ethernet": "{ipaddr}/{cidr} 󰈀",
+        "format-ethernet": "󰈀",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        // "on-click-right": "ghostty -e impala"
+        // "on-click-right": "ghostty --class='com.Impala -float' -e impala"
+        "on-click-right": "ghostty --class=com.Impala -e impala"
+    },
+    "bluetooth": {
+        "format": "",
+        "format-disabled": "󰂲",
+        "format-connected": "",
+        "tooltip-format": "Devices connected: {num_connections}",
+        "on-click": "blueberry"
+    },
+    "group/audio": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 400,
+            "children-class": "audio",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "pulseaudio",
+            "pulseaudio/slider"
+        ]
+    },
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        // "format-source": "󰍬",
+        // "format-source-muted": "󰍭",
+        "format-source": "",
+        "format-source-muted": "",
+        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "tooltip": false,
+        "on-click-right": "ghostty --class=com.Wiremix -e wiremix --tab input"
+    },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+    "pulseaudio": {
+        "interval": 1,
+        "format": "{icon}",
+        "format-muted": "󰖁",
+        "format-icons": {
+            "headphone": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        // "on-click-right": "pavucontrol",
+        "on-click-right": "ghostty --class=com.Wiremix -e wiremix",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        // If you want to use scroll to change brightness, comment the following lines
+        "on-scroll-up": "",
+        "on-scroll-down": "",
+        // And Uncomment the following line
+        // "reverse-scrolling": true,
+        "tooltip": true,
+        "tooltip-format": "Volume: {volume}%\n{desc}"
+    },
+    // "pulseaudio": {
+    //     // "scroll-step": 1, // %, can be a float
+    //     // "format": "{volume}% {icon} {format_source}",
+    //     "format": "{volume}% {icon}",
+    //     "format-bluetooth": "{volume}% {icon} {format_source}",
+    //     "format-bluetooth-muted": " {icon} {format_source}",
+    //     "format-muted": " {format_source}",
+    //     "format-source": "{volume}% ",
+    //     "format-source-muted": "",
+    //     "format-icons": {
+    //         "headphone": "",
+    //         "hands-free": "",
+    //         "headset": "",
+    //         "phone": "",
+    //         "portable": "",
+    //         "car": "",
+    //         "default": [
+    //             "",
+    //             "",
+    //             ""
+    //         ]
+    //     },
+    //     // "on-right-click": "pavucontrol"
+    //     "on-click": "ghostty --class=com.Wiremix -e wiremix"
+    // },
+    "custom/media": {
+        "format": "{icon} {text}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/power": {
+        "format": " ⏻ ",
+        // "on-click": "wlogout",
+        "on-click": "~/.config/rofi/powermenu/powermenu.sh",
+        "tooltip": false
+        // "format": " ⏻ ",
+        // "tooltip": false,
+        // "menu": "on-click",
+        // "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+        // "menu-actions": {
+        //     "shutdown": "shutdown",
+        //     "reboot": "reboot",
+        //     "suspend": "systemctl suspend",
+        //     "hibernate": "systemctl hibernate"
+        // }
+    }
+}
