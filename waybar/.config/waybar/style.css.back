@@ -1,5 +1,3 @@
-@import "matugen-colors.css";
-
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     /* font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif; */
@@ -114,10 +112,7 @@ button:hover {
     color: #ffffff;
     margin: 0 5px;
     background-color: #24273a;
-    background-color: @surface_container_low;
-    background-color: @background;
     color: #cad3f5;
-    color: @on_surface;
 }
 
 #window,

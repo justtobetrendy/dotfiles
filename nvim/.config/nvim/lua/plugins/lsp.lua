@@ -17,6 +17,7 @@ return {
                     "cssls",
                     "denols",
                     "dockerls",
+                    "elixirls",
                     "eslint",
                     "gopls",
                     "html",
@@ -27,6 +28,7 @@ return {
                     -- "ts_ls",
                     "yamlls",
                     -- "csharp_ls",
+                    "pylsp",
                 }
             })
         end
