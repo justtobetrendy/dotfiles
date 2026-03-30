@@ -65,7 +65,7 @@ return {
         })
 
         vim.cmd.colorscheme "catppuccin-macchiato"
-        -- vim.cmd.colorscheme "catppuccin"
+        -- vim.cmd.colorscheme "catppuccin-nvim"
 
         -- Explicitly set diagnostic underline styles
         vim.cmd([[
