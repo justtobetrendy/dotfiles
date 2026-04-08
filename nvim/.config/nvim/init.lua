@@ -1,4 +1,6 @@
-require("config.options")
-require("config.lazy")
-require("config.keymaps")
-require("config.lsp")
+--
+-- inspired by: https://tduyng.com/blog/neovim-basic-setup/ gh: https://gitlab.com/tduyng/nvim
+--
+
+require("config")
+require("plugins")

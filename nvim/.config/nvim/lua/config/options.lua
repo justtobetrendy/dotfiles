@@ -1,52 +1,136 @@
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
+local opt = vim.opt
 
-vim.wo.number = true
-vim.o.relativenumber = true
-vim.o.clipboard = "unnamedplus"                       -- Sync clipboard between OS and Neovim. (default: '')
-vim.o.wrap = false                                    -- Display lines as one long line (default: true)
-vim.o.linebreak = true                                -- Companion to wrap, don't split words (default: false)
-vim.o.mouse = "a"                                     -- Enable mouse mode (default: '')
-vim.o.autoindent = true                               -- Copy indent from current line when starting new one (default: true)
-vim.o.ignorecase = true                               -- Case-insensitive searching UNLESS \C or capital in search (default: false)
-vim.o.smartcase = true                                -- Smart case (default: false)
-vim.o.shiftwidth = 4                                  -- The number of spaces inserted for each indentation (default: 8)
-vim.o.tabstop = 4                                     -- Insert n spaces for a tab (default: 8)
-vim.o.softtabstop = 4                                 -- Number of spaces that a tab counts for while performing editing operations (default: 0)
-vim.o.expandtab = true                                -- Convert tabs to spaces (default: false)
-vim.o.scrolloff = 4                                   -- Minimal number of screen lines to keep above and below the cursor (default: 0)
-vim.o.sidescrolloff = 8                               -- Minimal number of screen columns either side of cursor if wrap is `false` (default: 0)
-vim.o.cursorline = true                               -- Highlight the current line (default: false)
-vim.o.splitbelow = true                               -- Force all horizontal splits to go below current window (default: false)
-vim.o.splitright = true                               -- Force all vertical splits to go to the right of current window (default: false)
-vim.o.hlsearch = false                                -- Set highlight on search (default: true)
-vim.o.showmode = false                                -- We don't need to see things like -- INSERT -- anymore (default: true)
-vim.opt.termguicolors = true                          -- Set termguicolors to enable highlight groups (default: false)
-vim.o.whichwrap =
-"bs<>[]hl"                                            -- Which "horizontal" keys are allowed to travel to prev/next line (default: 'b,s')
-vim.o.numberwidth = 4                                 -- Set number column width to 2 {default 4} (default: 4)
-vim.o.swapfile = false                                -- Creates a swapfile (default: true)
-vim.o.smartindent = true                              -- Make indenting smarter again (default: false)
-vim.o.showtabline = 2                                 -- Always show tabs (default: 1)
-vim.o.backspace = "indent,eol,start"                  -- Allow backspace on (default: 'indent,eol,start')
-vim.o.pumheight = 10                                  -- Pop up menu height (default: 0)
-vim.o.conceallevel = 0                                -- So that `` is visible in markdown files (default: 1)
-vim.wo.signcolumn = "yes"                             -- Keep signcolumn on by default (default: 'auto')
-vim.o.fileencoding = "utf-8"                          -- The encoding written to a file (default: 'utf-8')
-vim.o.cmdheight = 1                                   -- More space in the Neovim command line for displaying messages (default: 1)
-vim.o.breakindent = true                              -- Enable break indent (default: false)
-vim.o.updatetime = 250                                -- Decrease update time (default: 4000)
-vim.o.timeoutlen = 300                                -- Time to wait for a mapped sequence to complete (in milliseconds) (default: 1000)
-vim.o.backup = false                                  -- Creates a backup file (default: false)
-vim.o.writebackup = false                             -- If a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited (default: true)
-vim.o.undofile = true                                 -- Save undo history (default: false)
-vim.o.completeopt =
-"menuone,noselect"                                    -- Set completeopt to have a better completion experience (default: 'menu,preview')
-vim.opt.shortmess:append("c")                         -- Don't give |ins-completion-menu| messages (default: does not include 'c')
-vim.opt.iskeyword:append("-")                         -- Hyphenated words recognized by searches (default: does not include '-')
-vim.opt.formatoptions:remove({ "c", "r", "o" })       -- Don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode. (default: 'croql')
-vim.opt.runtimepath:remove("/usr/share/vim/vimfiles") -- Separate Vim plugins from Neovim in case Vim still in use (default: includes this path if Vim is installed)
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
-vim.opt.fillchars = { eob = " " }
+opt.number = true         -- Line numbers
+opt.relativenumber = true -- Relative line numbers
+opt.cursorline = true     -- Highlight current line
+opt.wrap = false          -- Don't wrap lines
+opt.scrolloff = 10        -- Keep 10 lines above/below cursor
+opt.sidescrolloff = 8     -- Keep 8 columns left/right of cursor
+
+-- Indentation
+opt.tabstop = 2        -- Tab width
+opt.shiftwidth = 2     -- Indent width
+opt.softtabstop = 2    -- Soft tab stop
+opt.expandtab = true   -- Use spaces instead of tabs
+opt.smartindent = true -- Smart auto-indenting
+opt.autoindent = true  -- Copy indent from current line
+
+-- Search settings
+opt.ignorecase = true -- Case insensitive search
+opt.smartcase = true  -- Case sensitive if uppercase in search
+opt.hlsearch = false  -- Don't highlight search results
+opt.incsearch = true  -- Show matches as you type
+
+-- Visual settings
+opt.termguicolors = true  -- Enable 24-bit colors
+opt.signcolumn = "yes"    -- Always show sign column
+opt.showmatch = true      -- Highlight matching brackets
+opt.matchtime = 2         -- How long to show matching bracket
+opt.cmdheight = 1         -- Command line height
+opt.showmode = false      -- Don't show mode in command line
+opt.pumheight = 10        -- Popup menu height
+opt.pumblend = 10         -- Popup menu transparency
+opt.winblend = 0          -- Floating window transparency
+opt.completeopt = "menu,menuone,noselect"
+opt.conceallevel = 2      -- Hide * markup for bold and italic, but not markers with substitutions
+opt.confirm = true        -- Confirm to save changes before exiting modified buffer
+opt.concealcursor = ""    -- Don't hide cursor line markup
+opt.synmaxcol = 300       -- Syntax highlighting limit
+opt.ruler = false         -- Disable the default ruler
+opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
+opt.winminwidth = 5       -- Minimum window width
+
+-- File handling
+opt.backup = false                            -- Don't create backup files
+opt.writebackup = false                       -- Don't create backup before writing
+opt.swapfile = false                          -- Don't create swap files
+opt.undofile = true                           -- Persistent undo
+opt.undolevels = 10000
+opt.undodir = vim.fn.expand("~/.vim/undodir") -- Undo directory
+
+opt.updatetime = 500
+opt.timeoutlen = vim.g.vscode and 1000 or 300 -- Lower than default (1000) to quickly trigger which-key
+opt.ttimeoutlen = 0                           -- Key code timeout
+opt.autoread = true                           -- Auto reload files changed outside vim
+opt.autowrite = true                          -- Auto save
+
+-- Behavior settings
+opt.hidden = true                                       -- Allow hidden buffers
+opt.errorbells = false                                  -- No error bells
+opt.backspace = "indent,eol,start"                      -- Better backspace behavior
+opt.autochdir = false                                   -- Don't auto change directory
+
+opt.path:append("**")                                   -- include subdirectories in search
+opt.selection = "exclusive"                             -- Selection behavior
+opt.mouse = "a"                                         -- Enable mouse support
+opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- Sync with system clipboard
+opt.modifiable = true                                   -- Allow buffer modifications
+opt.encoding = "UTF-8"                                  -- Set encoding
+
+-- Folding settings
+opt.smoothscroll = false
+vim.wo.foldmethod = "manual"
+opt.foldlevel = 99             -- Start with all folds open
+opt.formatoptions = "jcroqlnt" -- tcqj
+opt.grepformat = "%f:%l:%c:%m"
+opt.grepprg = "rg --vimgrep"
+
+-- Split behavior
+opt.splitbelow = true -- Horizontal splits go below
+opt.splitright = true -- Vertical splits go right
+opt.splitkeep = "screen"
+
+-- Command-line completion
+opt.wildmenu = true
+opt.wildmode = "longest:full,full"
+opt.wildignore:append({ "*.o", "*.obj", "*.pyc", "*.class", "*.jar" })
+
+-- Better diff options
+opt.diffopt:append("linematch:60")
+
+-- Performance improvements
+opt.redrawtime = 10000
+opt.maxmempattern = 20000
+
+-- Create undo directory if it doesn't exist
+local undodir = vim.fn.expand("~/.vim/undodir")
+if vim.fn.isdirectory(undodir) == 0 then
+  vim.fn.mkdir(undodir, "p")
+end
+
+vim.g.autoformat = true
+vim.g.trouble_lualine = true
+opt.fillchars = {
+  foldopen = "",
+  foldclose = "",
+  fold = " ",
+  foldsep = " ",
+  diff = "╱",
+  eob = " ",
+}
+opt.jumpoptions = "view"
+opt.laststatus = 3    -- global statusline
+opt.linebreak = true  -- Wrap lines at convenient points
+opt.list = false      -- Show some invisible characters (tabs...)
+opt.shiftround = true -- Round indent
+opt.shiftwidth = 2    -- Size of an indent
+opt.shortmess:append({ W = true, I = true, c = true, C = true })
+vim.g.markdown_recommended_style = 0
+
+vim.filetype.add({
+  extension = {
+    env = "dotenv",
+    txt = "markdown",
+  },
+  filename = {
+    [".env"] = "dotenv",
+    ["env"] = "dotenv",
+  },
+  pattern = {
+    ["[jt]sconfig.*.json"] = "jsonc",
+    ["%.env%.[%w_.-]+"] = "dotenv",
+  },
+})
