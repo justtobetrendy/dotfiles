@@ -26,6 +26,7 @@ git clone https://github.com/justtobetrendy/dotfiles.git
 | app | command | description |
 | - | - | - |
 | fish | `stow fish --no-folding -t ~` | shell |
+| btop | `stow btop -t ~` | activity monitor |
 | ghostty | `stow ghostty -t ~` | terminal | 
 | nvim | `stow nvim -t ~` | text editor |
 | tmux | `stow tmux --no-folding -t ~` | terminal multiplexer |
@@ -43,7 +44,7 @@ git clone https://github.com/justtobetrendy/dotfiles.git
 | swaync | `stow swaync -t ~` | notifications |
 | waybar | `stow waybar -t ~` | hyprland bar |
 | waypaper | `stow waypaper -t ~` | wallpaper switcher |
-| wlogout | `stow wlogout -t ~` | deprecated in favor of rofi menu - logout menu |
+| ~~wlogout~~ | `stow wlogout -t ~` | deprecated in favor of rofi menu - logout menu |
 
 ### to remove simlinks
 

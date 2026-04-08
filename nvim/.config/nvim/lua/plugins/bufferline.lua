@@ -10,7 +10,7 @@ return {
         -- local macchiato = require("catppuccin.palettes").get_palette "macchiato"
 
         require('bufferline').setup({
-            highlights = require("catppuccin.groups.integrations.bufferline").get_theme(),
+            highlights = require("catppuccin.special.bufferline").get_theme(),
             options = {
                 mode = "buffers", -- set to "tabs" to only show tabpages instead
                 themable = true,  -- allows highlight groups to be overriden i.e. sets highlights as default

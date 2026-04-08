@@ -11,12 +11,31 @@ vim.lsp.config('lua_ls', {
     },
 })
 
+-- vim.lsp.config('pylsp', {
+--     settings = {
+--         pylsp = {
+--             plugins = {
+--                 -- we are using ruff as formatter
+--                 pyflakes = { enabled = false },
+--                 pycodestyle = { enabled = false },
+--                 autopep8 = { enabled = false },
+--                 yapf = { enabled = false },
+--                 maccabe = { enabled = false },
+--                 pylsp_mypy = { enabled = false },
+--                 pylsp_black = { enabled = false },
+--                 pylsp_isort = { enabled = false },
+--             },
+--         },
+--     },
+-- })
+
 vim.lsp.enable({
     -- this list should be the same as `ensure_installed`
     -- found in plugins/lsp.lua
     "cssls",
     "denols",
     "dockerls",
+    "elixirls",
     "eslint",
     "gopls",
     "html",
@@ -27,6 +46,7 @@ vim.lsp.enable({
     -- "ts_ls",
     "yamlls",
     -- "csharp_ls",
+    "pylsp",
 })
 
 -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
