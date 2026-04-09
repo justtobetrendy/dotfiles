@@ -147,7 +147,7 @@ Snacks.setup({
       },
       grep_buffers = {},
       explorer = {
-        hidden = false,
+        hidden = true,
         ignored = false,
         supports_live = true,
         auto_close = false,

@@ -27,6 +27,7 @@ git clone https://github.com/justtobetrendy/dotfiles.git
 | - | - | - |
 | fish | `stow fish --no-folding -t ~` | shell |
 | btop | `stow btop -t ~` | activity monitor |
+| lazygit | `stow lazygit -t ~` | git tui |
 | ghostty | `stow ghostty -t ~` | terminal | 
 | nvim | `stow nvim -t ~` | text editor |
 | tmux | `stow tmux --no-folding -t ~` | terminal multiplexer |
