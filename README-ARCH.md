@@ -25,6 +25,12 @@ Install [mise-en-place](https://mise.jdx.dev/)
 sudo pacman -S mise 
 ```
 
+Install tree-sitter-cli
+
+```bash
+pacman -S tree-sitter-cli
+```
+
 Install tools globaly
 
 ```bash
