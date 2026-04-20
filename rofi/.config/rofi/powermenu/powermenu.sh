@@ -88,6 +88,9 @@ case ${chosen} in
 		run_cmd --hibernate
         ;;
     $lock)
+    # pkill -x rofi  # Close rofi menu before locking
+    sleep 0.1               # Wait 200ms for rofi to fully close
+
 		if [[ -x '/usr/bin/betterlockscreen' ]]; then
 			betterlockscreen -l
 		elif [[ -x '/usr/bin/i3lock' ]]; then
