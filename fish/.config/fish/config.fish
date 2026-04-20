@@ -16,5 +16,15 @@ alias ls "eza -al"
 alias lt 'eza -aT --color=always --group-directories-first --icons'
 
 alias lg "lazygit"
-
 alias ta "tmux attach"
+
+
+
+function y
+	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	command yazi $argv --cwd-file="$tmp"
+	if read -z cwd < "$tmp"; and [ "$cwd" != "$PWD" ]; and test -d "$cwd"
+		builtin cd -- "$cwd"
+	end
+	command rm -f -- "$tmp"
+end
