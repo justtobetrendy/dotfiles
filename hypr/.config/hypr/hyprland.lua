@@ -279,24 +279,12 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
--- TODO: convert this to lua
 -- # Laptop switch events
 -- # Trigger when the switch is turning on.
--- bindl = , switch:on:Lid Switch, exec, hyprctl keyword monitor "eDP-1, disable"
+hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("hyprctl eval 'hl.monitor({ output = \"eDP-1\", disabled = true })'"))
 -- # Trigger when the switch is turning off.
--- bindl = , switch:off:Lid Switch, exec, hyprctl keyword monitor "eDP-1,2880x1920@120,0x0,2"
-
--- TODO: try this ??
--- hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("hyprctl dispatch dpms off"))
--- hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd("hyprctl dispatch dpms on"))
-
--- hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("hyprctl keyword monitor 'eDP-1, disable'"))
+hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd("hyprctl eval 'hl.monitor({ output = \"eDP-1\", disabled = false })'"))
 -- hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd("hyprctl keyword monitor 'eDP-1,2880x1920@120,0x0,2'"))
-
-hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("hyprctl keyword monitor 'eDP-1, disable'"),
-  { locked = true, release = true })
-hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd("hyprctl keyword monitor 'eDP-1,2880x1920@120,0x0,2'"),
-  { locked = true, release = true })
 
 -- ----------------------
 -- WINDOWS AND WORKSPACES
