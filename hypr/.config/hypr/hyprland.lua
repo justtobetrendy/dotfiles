@@ -34,7 +34,7 @@ hl.monitor({
 local terminal    = "ghostty"
 local fileManager = "dolphin"
 local launcher    = "~/.config/rofi/launcher/launcher.sh"
-local power       = "~/.config/rofi/powermenu/powermenu.sh"
+local power       = "~/.config/hypr/scripts/powermenu.lua"
 local browser     = "brave"
 
 -- ---------
@@ -49,7 +49,11 @@ local browser     = "brave"
 
 hl.on("hyprland.start", function()
   hl.exec_cmd("systemctl --user start hyprpolkitagent")
-  hl.exec_cmd("waybar & hyprpaper & hypridle & hyprsunset & swaync")
+  hl.exec_cmd("waybar")
+  hl.exec_cmd("hyprpaper")
+  hl.exec_cmd("hypridle")
+  hl.exec_cmd("hyprsunset")
+  hl.exec_cmd("swaync")
   hl.exec_cmd("piactl connect ")
 end)
 
@@ -76,8 +80,13 @@ hl.config({
     border_size      = 2,
 
     col              = {
-      active_border   = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
-      inactive_border = "rgba(595959aa)",
+      -- default
+      -- active_border   = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
+      -- inactive_border = "rgba(595959aa)",
+
+      -- catppuccin macchiato
+      active_border   = { colors = { "rgb(138, 173, 244)", "rgb(139, 213, 202)" }, angle = 45 },
+      inactive_border = "rgb(54, 58, 79)",
     },
 
     -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
@@ -176,17 +185,18 @@ hl.config({
 
 hl.config({
   input = {
-    kb_layout    = "us",
-    kb_variant   = "",
-    kb_model     = "",
-    kb_options   = "",
-    kb_rules     = "",
+    kb_layout      = "us",
+    kb_variant     = "",
+    kb_model       = "",
+    kb_options     = "",
+    kb_rules       = "",
 
-    follow_mouse = 1,
+    follow_mouse   = 1,
 
-    sensitivity  = 0, -- -1.0 - 1.0, 0 means no modification.
+    sensitivity    = 0, -- -1.0 - 1.0, 0 means no modification.
+    natural_scroll = true,
 
-    touchpad     = {
+    touchpad       = {
       natural_scroll = true,
     },
   },
@@ -211,6 +221,7 @@ hl.device({
 -- -----------
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
+local shiftMod = "SUPER + SHIFT"
 local hyprMod = "CONTROL + SUPER + ALT + SHIFT"
 
 hl.bind(hyprMod .. " + B", hl.dsp.exec_cmd(browser))
@@ -230,16 +241,18 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 -- hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
+-- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only -- conflicts with dsp.focus
 
 -- Move focus with mainMod + arrow keys
--- hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
--- hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
--- hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "down" }))
+
+hl.bind(shiftMod .. " + H", hl.dsp.window.move({ direction = "left" }))
+hl.bind(shiftMod .. " + L", hl.dsp.window.move({ direction = "right" }))
+hl.bind(shiftMod .. " + K", hl.dsp.window.move({ direction = "up" }))
+hl.bind(shiftMod .. " + J", hl.dsp.window.move({ direction = "down" }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
