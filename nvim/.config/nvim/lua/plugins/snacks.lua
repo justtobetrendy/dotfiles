@@ -158,7 +158,7 @@ Snacks.setup({
         git_status = true,
         git_status_open = false,
         git_untracked = true,
-        jump = { close = true },
+        jump = { close = false },
         tree = true,
         watch = true,
         exclude = {

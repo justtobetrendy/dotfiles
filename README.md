@@ -32,6 +32,7 @@ git clone https://github.com/justtobetrendy/dotfiles.git
 | nvim | `stow nvim -t ~` | text editor |
 | tmux | `stow tmux --no-folding -t ~` | terminal multiplexer |
 | youtube-music | `stow youtube-music -t ~` | activate wayland for youtube-music-bin electron app |
+| yazi | `stow yazi -t ~` | file explorer |
 
 
 #### hyprland
@@ -80,6 +81,7 @@ Node (via [n](https://github.com/tj/n), see node [download page](https://nodejs.
 - [ripgrep](https://github.com/BurntSushi/ripgrep) via homebrew
 - [lazygit](https://github.com/jesseduffield/lazygit) via homebrew
 - [lazydocker](https://github.com/jesseduffield/lazydocker) via homebrew
+- [yazi](https://github.com/sxyazi/yazi)
  
 ### GTK Themes
 

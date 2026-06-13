@@ -9,7 +9,7 @@
 #
 # source: 
 # description: script to toggle PIA vpn connection it also allows connection to a predefined list of regions.
-# requires: notify-send, rofi 
+# requires: notify-send, piactl (official pia app)
 # usage: pia.sh [toggle | select-region]
 #
                                       
@@ -38,8 +38,7 @@ fi
 
 # Region connection
 if [ "$CMD" = "select-region" ]; then
-    # chosen=$(printf "Log Out\nSuspend\nRestart\nPower OFF" | rofi -dmenu -i -theme-str '@import "~/.config/rofi/powermenu.rasi"')
-    region=$(printf "ca-montreal\nca-ontario-streaming-optimized\nca-toronto\nca-ontario\nus-east-streaming-optimized\nus-michigan\nfrance\ndk-copenhagen\ndk-streaming-optimized\nde-berlin\nde-germany-streaming-optimized\nde-frankfurt\nfi-streaming-optimized\nfi-helsinki\nswitzerland\nnorway\njp-streaming-optimized\njp-tokyo" | rofi -dmenu -i)
+    region=$(piactl get regions | rofi -dmenu -theme ~/.config/rofi/menu-searchable/style.rasi)
 
     if [ "$region" != "" ]; then
         $(piactl set region $region)
