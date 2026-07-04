@@ -36,6 +36,7 @@ require("tree-sitter-manager").setup({
     "proto",
     "python",
     "query",
+    "qmljs",
     "regex",
     "rust",
     "scss",

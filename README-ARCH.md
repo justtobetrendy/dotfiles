@@ -118,6 +118,12 @@ paru -S waypaper
 
 for swaync to work we may need to remove `org.knopwob.dunst.service` (or the file containing `dunst` in it's filename) from `/usr/share/dbus-1/services`
 
+## quickshell
+
+```bash
+sudo pacman -S quickshell unixodbc
+```
+
 ## other apps
 
 ```bash
