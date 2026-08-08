@@ -41,6 +41,7 @@ require("nvim-treesitter").install({
   "proto",
   "python",
   "query",
+  "qmljs",
   "regex",
   "rust",
   "scss",
