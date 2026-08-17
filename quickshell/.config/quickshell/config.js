@@ -1,8 +1,11 @@
 const bar = {
-  fontFamily: "JetBrainsMono Nerd Font Propo",
+  // fontFamily: "JetBrainsMono Nerd Font Propo", // this is problematic for single icon bars
+  fontFamily: "JetBrainsMono Nerd Font",
   fontSize: 13,
   fontWeight: 700,
-  height: 30
+  height: 30,
+  width: 1280,
+  spacing: 2.0
 }
 
 const screens = {
@@ -11,10 +14,45 @@ const screens = {
   "eDP-1": { start: 6, end: 10 }
 }
 
+const notifications = {
+  timeout: 5000
+}
+
+const bluelight = {
+  temperature: 3500
+}
+
 const colors = {
   // mutagen based
   background: "#111418",
   on_background: "#e1e2e8",
+  danger: "#ed8796", // red
+  // danger: "#f5bde6", // pink
+  success: "#a6da95", // green
+  warning: "#eed49f", // yellow
+  region_selected: "#a6e3a1",
+  tile: {
+    background: "#1d2024",      // surface_container
+    badgeActive: "#504663",     // mauve @ ~30% over surface_container
+    badgeInactive: "#363a4f"    // surface0
+  },
+  slider: {
+    handle: "#C6A0F6",     // mauve
+    fill: "#C6A0F6",       // mauve
+    background: "#363A4F"  // surface0
+  },
+  notification: {
+    bg: "#1a1b26",
+    bgDark: "#16161e",
+    fg: "#a9b1d6",
+    muted: "#444b6a",
+    cyan: "#8bd5ca", // teal
+    purple: "#c6a0f6", // mauve
+    red: "#ed8796", // red
+    yellow: "#eed49f", // yellow
+    blue: "#8aadf4" // blue
+  }
+
   //     @define-color error #ffb4ab;
   //
   //     @define-color error_container #93000a;

@@ -1,9 +1,11 @@
-import Quickshell.Services.UPower
 import QtQuick
 import QtQuick.Layouts
+import Quickshell.Services.UPower
 import "./config.js" as Config
 
 Rectangle {
+    id: root
+
     color: Config.colors.background
     radius: 8
     implicitHeight: Config.bar.height

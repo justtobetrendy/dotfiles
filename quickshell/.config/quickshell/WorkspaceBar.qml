@@ -1,26 +1,29 @@
-import Quickshell.Hyprland
 import QtQuick
 import QtQuick.Layouts
+import Quickshell.Hyprland
 import "./config.js" as Config
 
 RowLayout {
-    spacing: 2
+    id: root
 
     required property string screenName
 
+    spacing: 2
+
     Repeater {
         model: {
-            var cfg = Config.screens[screenName];
-            if (!cfg) return [];
-            var list = [];
-            for (var i = cfg.start; i <= cfg.end; i++) list.push(i);
+            const cfg = Config.screens[screenName];
+            if (!cfg)
+                return [];
+            const list = [];
+            for (let i = cfg.start; i <= cfg.end; i++)
+                list.push(i);
             return list;
         }
 
         Item {
             required property int modelData
-            property var ws: Hyprland.workspaces.values.find(w => w.id === modelData)
-            property bool isActive: Hyprland.focusedWorkspace?.id === modelData
+            readonly property bool isActive: Hyprland.focusedWorkspace?.id === modelData
 
             width: 24
             height: 10
@@ -33,13 +36,18 @@ RowLayout {
                 radius: height / 2
                 color: "white"
 
-                Behavior on width { NumberAnimation { duration: 200; easing.type: Easing.InOutQuad } }
+                Behavior on width {
+                    NumberAnimation {
+                        duration: 200
+                        easing.type: Easing.InOutQuad
+                    }
+                }
             }
 
             MouseArea {
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
-                onClicked: Hyprland.dispatch("focusworkspace", parent.modelData.toString())
+                onClicked: Hyprland.dispatch("hl.dsp.focus({ workspace = " + modelData + " })")
             }
         }
     }

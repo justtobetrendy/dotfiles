@@ -42,9 +42,10 @@ git clone https://github.com/justtobetrendy/dotfiles.git
 | - | - | - |
 | electron | `stow electron -t ~` | activate wayland for electron apps such as obsidian |
 | hypr | `stow hypr -t ~` | hyprland window compositor |
+| quickshell | `stow quickshell -t ~` | hyprland bar |
 | rofi | `stow rofi -t ~` | launcher and menu |
-| swaync | `stow swaync -t ~` | notifications |
-| waybar | `stow waybar -t ~` | hyprland bar |
+| ~~swaync~~ | `stow swaync -t ~` | deprecated in favor of quickshell - notifications |
+| ~~waybar~~ | `stow waybar -t ~` | deprecated in favor of quickshell - hyprland bar |
 | waypaper | `stow waypaper -t ~` | wallpaper switcher |
 | ~~wlogout~~ | `stow wlogout -t ~` | deprecated in favor of rofi menu - logout menu |
 

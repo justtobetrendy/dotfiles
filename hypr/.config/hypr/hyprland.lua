@@ -49,11 +49,12 @@ local browser     = "brave"
 
 hl.on("hyprland.start", function()
   hl.exec_cmd("systemctl --user start hyprpolkitagent")
-  hl.exec_cmd("waybar")
+  -- hl.exec_cmd("waybar") -- deprecated in favor of quickshell
+  hl.exec_cmd("quickshell")
   hl.exec_cmd("hyprpaper")
   hl.exec_cmd("hypridle")
   hl.exec_cmd("hyprsunset")
-  hl.exec_cmd("swaync")
+  -- hl.exec_cmd("swaync") -- deprecated in favor of quickshell
   hl.exec_cmd("piactl connect ")
 end)
 
@@ -228,6 +229,7 @@ hl.bind(hyprMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(hyprMod .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind(hyprMod .. " + W", hl.dsp.exec_cmd('waypaper')) -- NOT WORKING ?
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd('~/.config/waybar/scripts/launcher.sh'))
+-- TODO: hl.bind(mainMod .. " + R", hl.dsp.exec_cmd('~/.config/quickshell/reload.sh'))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(launcher))
 hl.bind("SUPER + SHIFT" .. " + 7", hl.dsp.exec_cmd('hyprshot -m region'))
 hl.bind("SUPER + SHIFT" .. " + 8", hl.dsp.exec_cmd('hyprshot -m window'))
@@ -235,7 +237,7 @@ hl.bind("SUPER + SHIFT" .. " + 8", hl.dsp.exec_cmd('hyprshot -m window'))
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
--- hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+-- hl.bind(mainMod .. " + M", hl.dsp.exee_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(power))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
@@ -364,6 +366,12 @@ hl.window_rule({
 hl.window_rule({
   name  = "waypaper-float",
   match = { class = "^(waypaper)" },
+  float = true,
+})
+
+hl.window_rule({
+  name  = "blueberry-float",
+  match = { class = "blueberry.py" },
   float = true,
 })
 
