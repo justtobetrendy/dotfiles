@@ -1,5 +1,5 @@
 import Quickshell
-// import Quickshell.Io
+import Quickshell.Io
 import Quickshell.Wayland
 import Quickshell.Services.Notifications
 import QtQuick
@@ -38,19 +38,20 @@ Scope {
         }
     }
 
-    // UNUSED FOR NOW, activate for external use
-    // IpcHandler {
-    //     target: "notifications"
-    //     function toggle(): void {
-    //         root.toggleCenter();
-    //     }
-    //     function show(): void {
-    //         root.centerOpen = true;
-    //     }
-    //     function hide(): void {
-    //         root.centerOpen = false;
-    //     }
-    // }
+    IpcHandler {
+        target: "notifications"
+        function toggle(): void {
+            root.toggleCenter();
+        }
+
+        // UNUSED FOR NOW, activate for external use
+        // function show(): void {
+        //     root.centerOpen = true;
+        // }
+        // function hide(): void {
+        //     root.centerOpen = false;
+        // }
+    }
 
     // notification card
     PanelWindow {
