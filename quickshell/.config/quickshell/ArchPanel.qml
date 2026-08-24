@@ -10,6 +10,7 @@ Rectangle {
 
     required property QtObject powerService
     required property QtObject filterService
+    required property QtObject updateService
 
     readonly property bool hovered: panelHover.hovered
 
@@ -27,6 +28,20 @@ Rectangle {
         columns: 2
         rowSpacing: 10
         columnSpacing: 10
+
+        UpdateStatTile {
+            Layout.fillWidth: true
+
+            label: "arch"
+            count: root.updateService.archUpdates
+        }
+
+        UpdateStatTile {
+            Layout.fillWidth: true
+
+            label: "aur"
+            count: root.updateService.aurUpdates
+        }
 
         QuickTile {
             Layout.fillWidth: true

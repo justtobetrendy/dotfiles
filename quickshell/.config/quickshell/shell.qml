@@ -22,6 +22,10 @@ ShellRoot {
         id: blueLightFilterService
     }
 
+    PackageUpdateService {
+        id: packageUpdateService
+    }
+
     // for each screens
     Variants {
         model: Quickshell.screens
@@ -56,6 +60,7 @@ ShellRoot {
                     ArchBar {
                         powerService: powerProfilesService
                         filterService: blueLightFilterService
+                        updateService: packageUpdateService
                     }
 
                     Spacer {}

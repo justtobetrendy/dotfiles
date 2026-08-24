@@ -7,6 +7,7 @@ Rectangle {
 
     required property QtObject powerService
     required property QtObject filterService
+    required property QtObject updateService
 
     readonly property bool wantsPopup: barHover.hovered || panelContent.hovered
 
@@ -76,6 +77,7 @@ Rectangle {
 
             powerService: root.powerService
             filterService: root.filterService
+            updateService: root.updateService
             onCloseRequested: panel.visible = false
         }
     }

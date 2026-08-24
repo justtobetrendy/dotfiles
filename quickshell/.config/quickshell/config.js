@@ -26,6 +26,7 @@ const colors = {
   // mutagen based
   background: "#111418",
   on_background: "#e1e2e8",
+  muted: "#8b90a0",
   danger: "#ed8796", // red
   // danger: "#f5bde6", // pink
   success: "#a6da95", // green
