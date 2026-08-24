@@ -230,7 +230,7 @@ hl.bind(hyprMod .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind(hyprMod .. " + W", hl.dsp.exec_cmd('waypaper')) -- NOT WORKING ?
 -- hl.bind(mainMod .. " + R", hl.dsp.exec_cmd('~/.config/waybar/scripts/launcher.sh')) -- deprecated in favor of quickshell
 -- hl.bind(mainMod .. " + R", hl.dsp.exec_cmd('~/.config/quickshell/reload.sh'))
--- hl.bind(mainMod .. " + N", hl.dsp.exec_cmd('~/.config/quickshell/ipc-notifications-toggle.sh'))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd('qs ipc call notifications toggle &'))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(launcher))
 hl.bind("SUPER + SHIFT" .. " + 7", hl.dsp.exec_cmd('hyprshot -m region'))
 hl.bind("SUPER + SHIFT" .. " + 8", hl.dsp.exec_cmd('hyprshot -m window'))
