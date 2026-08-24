@@ -37,6 +37,10 @@ Install tools globaly
 mise use --global node@lts
 mise use --global go
 mise use --global deno
+
+Install pacman-contrib (contains the safe `checkupdates` utility)
+
+pacman -S pacman-contrib
 ```
 
 ## 3. shell and terminal
