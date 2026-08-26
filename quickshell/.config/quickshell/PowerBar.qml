@@ -10,11 +10,11 @@ Item {
 
     Text {
         anchors.centerIn: parent
-        text: "\u{F011}"
+        text: "\u{f0425}"
         color: Config.colors.on_background
         font {
             family: Config.bar.fontFamily
-            pixelSize: Config.bar.fontSize + 1
+            pixelSize: Config.bar.singleIconFontSize + 4
             weight: Config.bar.fontWeight // TODO: does not seem to work on nerd font icons
         }
     }

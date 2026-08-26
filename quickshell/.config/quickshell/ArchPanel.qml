@@ -55,7 +55,7 @@ Rectangle {
         QuickTile {
             Layout.fillWidth: true
 
-            glyph: "\u{F293}"
+            glyph: "\u{f00af}"
             label: "Bluetooth"
             active: true
             onClicked: {

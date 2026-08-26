@@ -2,6 +2,7 @@ const bar = {
   // fontFamily: "JetBrainsMono Nerd Font Propo", // this is problematic for single icon bars
   fontFamily: "JetBrainsMono Nerd Font",
   fontSize: 13,
+  singleIconFontSize: 15,
   fontWeight: 700,
   height: 30,
   width: 1280,

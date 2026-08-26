@@ -19,7 +19,7 @@ Rectangle {
         id: clockText
         x: 10
         anchors.verticalCenter: parent.verticalCenter
-        text: Qt.formatDateTime(clock.date, "hh:mm 󰸘 dd")
+        text: Qt.formatDateTime(clock.date, "hh:mm \u{f00ed} dd")
         color: Config.colors.on_background
 
         font {

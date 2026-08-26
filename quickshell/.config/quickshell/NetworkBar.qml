@@ -26,22 +26,22 @@ Rectangle {
     Timer {
         id: debounce
         interval: 1000
-        onTriggered: statusProc.running = true;
+        onTriggered: statusProc.running = true
     }
 
     Text {
         anchors.centerIn: parent
         text: {
             if (!root.isConnected)
-                return "󰅗";
+                return "󰅗"; // TODO: Material icon
             if (root.isWifi)
-                return "󰖩";
-            return "󰈀";
+                return "\u{f05a9}";
+            return "\u{f0200}";
         }
         color: root.isConnected ? Config.colors.on_background : Config.colors.danger
         font {
             family: Config.bar.fontFamily
-            pixelSize: Config.bar.fontSize
+            pixelSize: Config.bar.singleIconFontSize
             weight: Config.bar.fontWeight
         }
     }
@@ -88,7 +88,8 @@ Rectangle {
         stdout: SplitParser {
             onRead: data => updateState()
         }
-        onRunningChanged: if (!running) running = true
+        onRunningChanged: if (!running)
+            running = true
     }
 
     Process {

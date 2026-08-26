@@ -15,11 +15,11 @@ Rectangle {
 
     Text {
         anchors.centerIn: parent
-        text: root.hasNotifications ? "\u{f009a}" : ""
+        text: root.hasNotifications ? "\u{f009a}" : "\u{f009c}"
         color: Config.colors.on_background
         font {
             family: Config.bar.fontFamily
-            pixelSize: Config.bar.fontSize + 1
+            pixelSize: Config.bar.singleIconFontSize
             weight: Config.bar.fontWeight
         }
     }

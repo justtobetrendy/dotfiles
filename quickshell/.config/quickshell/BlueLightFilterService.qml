@@ -6,7 +6,7 @@ Item {
     id: root
 
     property bool enabled: false
-    readonly property string icon: "\u{F186}"
+    readonly property string icon: "\u{f1a4c}"
 
     readonly property int offTemperature: 6500
     readonly property int activeThreshold: 5000

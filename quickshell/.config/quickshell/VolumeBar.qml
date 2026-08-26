@@ -25,11 +25,11 @@ Rectangle {
     Text {
         id: iconText
         anchors.centerIn: parent
-        text: root.muted ? "\u{F026}" : root.volume < 0.33 ? "\u{F027}" : "\u{F028}"
+        text: root.muted ? "\u{f0581}" : root.volume === 0 ? "\u{f057f}" : root.volume <= 0.25 ? "\u{f057f}" : root.volume <= 0.76 ? "\u{f0580}" : "\u{f057e}"
         color: Config.colors.on_background
         font {
             family: Config.bar.fontFamily
-            pixelSize: Config.bar.fontSize
+            pixelSize: Config.bar.singleIconFontSize + 1
             weight: Config.bar.fontWeight
         }
     }
@@ -55,7 +55,7 @@ Rectangle {
         anchors.fill: parent
         cursorShape: Qt.PointingHandCursor
         acceptedButtons: Qt.LeftButton | Qt.RightButton
-        onClicked: (mouse) => {
+        onClicked: mouse => {
             if (mouse.button === Qt.RightButton) {
                 wiremixProc.startDetached();
             } else {

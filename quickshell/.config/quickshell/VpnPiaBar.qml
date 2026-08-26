@@ -17,11 +17,12 @@ Rectangle {
 
     Text {
         anchors.centerIn: parent
-        text: "\u{F132}"
+        // text: service.isConnected ? "\u{f0498}" : "\u{f099e}"
+        text: service.isConnected ? "\u{f0498}" : service.isTransitioning ? "\u{f11a2}" : "\u{f099e}"
         color: service.isConnected ? Config.colors.success : service.isTransitioning ? Config.colors.warning : Config.colors.danger
         font {
             family: Config.bar.fontFamily
-            pixelSize: Config.bar.fontSize
+            pixelSize: Config.bar.singleIconFontSize
             weight: Config.bar.fontWeight
         }
     }

@@ -7,9 +7,9 @@ Item {
     property string currentProfile: "balanced"
     readonly property var profiles: ["performance", "balanced", "power-saver"]
     readonly property var icons: ({
-            performance: "",
-            balanced: "",
-            "power-saver": ""
+            performance: "\u{f140b}",
+            balanced: "\u{f0680}",
+            "power-saver": "\u{f032a}"
         })
 
     readonly property var labels: ({

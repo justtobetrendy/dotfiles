@@ -25,12 +25,12 @@ Rectangle {
     Text {
         id: iconText
         anchors.centerIn: parent
-        text: "\u{F130}"
-        color: root.muted ? Config.colors.danger : Config.colors.on_background
+        text: root.muted ? "\u{f036d}" : "\u{f036c}"
+        color: Config.colors.on_background
         font {
             family: Config.bar.fontFamily
-            pixelSize: Config.bar.fontSize
-            weight: Config.bar.fontWeight
+            pixelSize: Config.bar.singleIconFontSize + 1
+            weight: Font.Normal
         }
     }
 
