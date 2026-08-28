@@ -34,6 +34,10 @@ Rectangle {
 
             label: "arch"
             count: root.updateService.archUpdates
+            onClicked: {
+                archProc.running = true;
+                root.closeRequested();
+            }
         }
 
         UpdateStatTile {
@@ -41,6 +45,10 @@ Rectangle {
 
             label: "aur"
             count: root.updateService.aurUpdates
+            onClicked: {
+                aurProc.running = true;
+                root.closeRequested();
+            }
         }
 
         QuickTile {
@@ -82,6 +90,20 @@ Rectangle {
         id: blueberryProc
 
         command: ["blueberry"]
+    }
+
+    Process {
+        id: archProc
+
+        command: ["ghostty", "--class=com.ArchPanel", "-e", "sh", "-c", "sudo pacman -Syu; echo; echo Press enter to close...; read"]
+        onRunningChanged: if (!running) root.updateService.refresh()
+    }
+
+    Process {
+        id: aurProc
+
+        command: ["ghostty", "--class=com.ArchPanel", "-e", "sh", "-c", "paru -Sua; echo; echo Press enter to close...; read"]
+        onRunningChanged: if (!running) root.updateService.refresh()
     }
 
     HoverHandler {
