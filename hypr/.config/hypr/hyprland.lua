@@ -376,6 +376,12 @@ hl.window_rule({
   float = true,
 })
 
+-- hl.window_rule({
+--   name  = "archpanel-float",
+--   match = { class = "com.ArchPanel" },
+--   float = true,
+-- })
+
 hl.workspace_rule({ workspace = "6", monitor = "eDP-1" })
 hl.workspace_rule({ workspace = "7", monitor = "eDP-1" })
 hl.workspace_rule({ workspace = "8", monitor = "eDP-1" })
