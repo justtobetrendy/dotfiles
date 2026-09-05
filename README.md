@@ -53,12 +53,10 @@ git clone https://github.com/justtobetrendy/dotfiles.git
 
 `stow -D diretory -t ~`
 
-## arch linux
-
 ### prerequisits
 
-Node (via [n](https://github.com/tj/n), see node [download page](https://nodejs.org/en/download) and select `n`) and GoLang (or LSP will not install)
-
+- install [mise](https://mise.jdx.dev/installing-mise.html) 
+  - install node, golang and deno via mise
 - [nerdfont](https://www.nerdfonts.com/) JetBrainsMono Nerd Font Mono [via homebrew](https://formulae.brew.sh/cask/font-jetbrains-mono-nerd-font)
 - tree-sitter-cli
 - fd

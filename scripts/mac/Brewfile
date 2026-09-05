@@ -1,0 +1,30 @@
+tap "homebrew/cask-fonts"
+
+# core
+brew "stow"
+brew "git"
+brew "mise"
+brew "tree-sitter-cli"
+brew "fd"
+
+# shell and terminal
+brew "fish"
+brew "ghostty"
+brew "fzf"
+brew "zoxide"
+brew "ripgrep"
+brew "bat"
+brew "eza"
+
+# editors, multiplexer and tools
+brew "neovim"
+brew "tmux"
+brew "lazygit"
+brew "lazydocker"
+brew "btop"
+
+# file explorer
+brew "yazi"
+
+# fonts
+cask "font-jetbrains-mono-nerd-font"
