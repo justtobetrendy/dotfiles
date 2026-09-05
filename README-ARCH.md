@@ -37,6 +37,10 @@ Install tools globaly
 mise use --global node@lts
 mise use --global go
 mise use --global deno
+
+Install pacman-contrib (contains the safe `checkupdates` utility)
+
+pacman -S pacman-contrib
 ```
 
 ## 3. shell and terminal
@@ -106,7 +110,7 @@ git clone -b v2.1.3 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugin
 ## 6. hyprland
 
 ```bash
-sudo pacman -S waybar hyprlock hyprpaper hypridle hyprshot hyprsunset hyprpolkitagent blueberry impala wiremix brightnessctl swaync power-profiles-daemon rofi
+sudo pacman -S hyprlock hyprpaper hypridle hyprshot hyprsunset hyprpolkitagent blueberry impala wiremix brightnessctl power-profiles-daemon rofi
 paru -S waypaper
 ```
 
@@ -116,7 +120,13 @@ paru -S waypaper
 - `systemctl start bluetooth.service`
 - `sudo systemctl enable --now fstrim.timer` activate TRIM for SSD
 
-for swaync to work we may need to remove `org.knopwob.dunst.service` (or the file containing `dunst` in it's filename) from `/usr/share/dbus-1/services`
+~~for swaync to work we may need to remove `org.knopwob.dunst.service` (or the file containing `dunst` in it's filename) from `/usr/share/dbus-1/services`~~
+
+## quickshell
+
+```bash
+sudo pacman -S quickshell unixodbc
+```
 
 ## other apps
 

@@ -10,7 +10,7 @@ vim.pack.add({
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("mason-tool-installer").setup({
-  ensure_installed = { "lua_ls", "ts_ls", "eslint_d", "cssls", "dockerls", "eslint" }
+  ensure_installed = { "lua_ls", "ts_ls", "eslint_d", "cssls", "dockerls", "eslint", "qmlls" }
 })
 
 map("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })
