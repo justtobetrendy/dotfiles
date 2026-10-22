@@ -75,7 +75,7 @@ opt.backspace = "indent,eol,start"                      -- Better backspace beha
 opt.autochdir = false                                   -- Don't auto change directory
 
 opt.path:append("**")                                   -- include subdirectories in search
-opt.selection = "exclusive"                             -- Selection behavior
+-- opt.selection = "exclusive"                             -- Selection behavior
 opt.mouse = "a"                                         -- Enable mouse support
 opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- Sync with system clipboard
 opt.modifiable = true                                   -- Allow buffer modifications
